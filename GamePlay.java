@@ -32,11 +32,6 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {
             setFocusTraversalKeysEnabled(false);
             timer = new Timer(delay,this);
             timer.start();
-            if(ballPY > 585) {
-                play = false;
-                ballPosX = 275;
-                ballPY = 275;
-            }
              }
 
         public void paint(Graphics g) {
@@ -60,8 +55,12 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {
             g.setColor(Color.blue);
             g.fillOval(ballPosX, ballPY, 20, 20);
 
-            
-         }
+            if(ballPY > 585) {
+                play = false;
+                ballPosX = 275;
+                ballPY = 275;
+            }
+        }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -95,7 +94,6 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {
                             ballYDir = -ballYDir;
                         }
                         break A;
-                        
                     }
                 }
             }
@@ -107,10 +105,10 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {
         if(ballPosX < 0) {
         ballXDir = -ballXDir;
        } 
-        if(ballPY < 0) {
+       if(ballPY < 0) {
         ballYDir = -ballYDir;
        }
-        if(ballPosX > 670) {
+       if(ballPosX > 670) {
         ballXDir = -ballXDir;
        }
     } 
