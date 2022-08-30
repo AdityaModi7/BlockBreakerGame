@@ -10,4 +10,4 @@ public class Main {
         game.setVisible(true);
         game.add(gamePlay);
          }
-}
+    }
